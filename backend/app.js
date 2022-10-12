@@ -1,8 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
 
-const app = express();
-
 const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
 
@@ -11,6 +9,8 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0.0sb1dfi.mongodb.net/?retryW
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
+
+const app = express();
 
 app.use(express.json());
 
